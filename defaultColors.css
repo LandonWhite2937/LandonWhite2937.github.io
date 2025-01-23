@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-color: #4771def5;
+    background-color: #46756ff5;
     color: #333;
     text-align: center
 }
@@ -11,7 +11,7 @@ body {
 header {
     text-align: center;
     padding: 20px;
-    background-color: #32a4d5;
+    background-color: #46756ff5;
 }
 
 section {
@@ -38,3 +38,7 @@ img {
     justify-content: flex-end;
     margin-right: 20px;
   }
+
+  form {
+    color:#000000
+}
