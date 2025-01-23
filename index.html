@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Landon's Portfolio Site</title>
         <link rel="stylesheet" href="defaultColors.css">
+        <script src="javascript.js"></script>
     </head>
     <body>
         <header>
@@ -23,9 +24,9 @@
         <h2>Upcoming JavaScript Projects</h2>
         <p>This is where I will be presenting my JavaScript projects.</p>
         </section>
-        
+        <h3 text-align="right">Color Settings</h3>
         <section style="width:300px;" class = "flex-box-2">
-            <h3>Color Settings</h3>
+         
             <form class="flex-box-2">
                 <label for="default">Default Colors</label>
                 <input onclick="default_colors()" name="color-scheme" type="radio" id="default" value="default">
@@ -36,37 +37,6 @@
             </form>
         </section>
 
-
-        <script>
-            // Looked up online how to link a CSS stylesheet using javascript.
-
-            function dark_mode(){
-                let head = document.getElementsByTagName('HEAD')[0];
-                let link = document.createElement('link');
-                link.rel = 'stylesheet';
-                link.type = 'text/css';
-                link.href = 'darkMode.css';
-                head.appendChild(link);
-            }
-           
-            function light_mode(){
-                let head = document.getElementsByTagName('HEAD')[0];
-                let link = document.createElement('link');
-                link.rel = 'stylesheet';
-                link.type = 'text/css';
-                link.href = 'lightMode.css';
-                head.appendChild(link);
-            }
-
-            function default_colors(){
-                let head = document.getElementsByTagName('HEAD')[0];
-                let link = document.createElement('link');
-                link.rel = 'stylesheet';
-                link.type = 'text/css';
-                link.href = 'defaultColors.css';
-                head.appendChild(link);
-            }
-        </script>
 
         
         <p>&copy; Copyright 2025 Landon D. White. All rights reserved.</p>
