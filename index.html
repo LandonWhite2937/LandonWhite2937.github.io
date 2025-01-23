@@ -4,25 +4,71 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Landon's Portfolio Site</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="defaultColors.css">
     </head>
     <body>
         <header>
             <h1>Landon's Portfolio Site</h1>
         </header>
-
+        
         <section>
-        <p>Hello! My name is Landon White. I am a Computer Science major at Weber State University. A little about me is that I 
-            have been playing soccer since I was 6 years old, I graduated from Clearfield High School in 2024 with Magna Cum Laude.
-            This website will serve as my portfolio, where I present my projects for Web 1430 and maybe other classes too in the future. Thank you
-            for visiting my website, and I hope you enjoy!</p>
-        <img src="self-image.jpg">
+            <img src="self-image.jpg">
+            <p>Hello! My name is Landon White. I am a Computer Science major at Weber State University. A little about me is that I 
+                have been playing soccer since I was 6 years old, I graduated from Clearfield High School in 2024 with Magna Cum Laude.
+                This website will serve as my portfolio, where I present my projects for Web 1430 and maybe other classes too in the future. Thank you
+                for visiting my website, and I hope you enjoy!</p>
         </section>
-
+        
         <section>
         <h2>Upcoming JavaScript Projects</h2>
         <p>This is where I will be presenting my JavaScript projects.</p>
         </section>
         
+        <section style="width:300px;" class = "flex-box-2">
+            <h3>Color Settings</h3>
+            <form class="flex-box-2">
+                <label for="default">Default Colors</label>
+                <input onclick="default_colors()" name="color-scheme" type="radio" id="default" value="default">
+                <label for="dark">Dark Mode</label>
+                <input onclick="dark_mode()" name="color-scheme" type="radio" id="dark" value="dark">
+                <label for="light">Light Mode</label>
+                <input onclick="light_mode()" name="color-scheme" type="radio" id="light" value="light">
+            </form>
+        </section>
+
+
+        <script>
+            // Looked up online how to link a CSS stylesheet using javascript.
+
+            function dark_mode(){
+                let head = document.getElementsByTagName('HEAD')[0];
+                let link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'darkMode.css';
+                head.appendChild(link);
+            }
+           
+            function light_mode(){
+                let head = document.getElementsByTagName('HEAD')[0];
+                let link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'lightMode.css';
+                head.appendChild(link);
+            }
+
+            function default_colors(){
+                let head = document.getElementsByTagName('HEAD')[0];
+                let link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'defaultColors.css';
+                head.appendChild(link);
+            }
+        </script>
+
+        
+        <p>&copy; Copyright 2025 Landon D. White. All rights reserved.</p>
     </body>
 </html>

@@ -1,0 +1,40 @@
+body {
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #4771def5;
+    color: #333;
+    text-align: center
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #32a4d5;
+}
+
+section {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 10px;
+    background: rgba(107, 217, 186, 0.695);
+    align-items: normal;
+}
+
+h1, h2, p {
+    color: #000000;
+    text-align: center
+}
+
+img {
+    width: 300px;
+    border: 2px solid #000000;
+    float: left;    
+}
+
+.flex-box-2 {
+    display:flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+  }
