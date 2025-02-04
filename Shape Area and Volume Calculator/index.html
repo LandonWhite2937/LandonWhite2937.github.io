@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Calculator - Cylinder</title>
+    <style>
+        img {
+        width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Geometry Calculator</h1>
+    <p>Enter the radius and height of the cylinder to calculate perimeter, area, and volume:</p>
+
+ 
+    <img src="cylinder_image.png" alt="Cylinder">
+    <br>
+    <img src="circle_image.jpg" alt="Circle">
+
+    <h3>Input values:</h3>
+    <label for="radius">Radius (r): </label>
+    <input type="number" id="radius" placeholder="Enter radius" required>
+    <br>
+    <label for="height">Height (h): </label>
+    <input type="number" id="height" placeholder="Enter height" required>
+    <br>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <div class="result">
+        <h3>Results:</h3>
+        <p id="perimeterResult">Perimeter of the circle (2D): </p>
+        <p id="areaResult">Area of the circle (2D): </p>
+        <p id="volumeResult">Volume of the cylinder (3D): </p>
+    </div>
+
+    <script src="geometry_calculator.js"></script>
+
+</body>
+</html>
