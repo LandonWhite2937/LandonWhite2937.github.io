@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Memory Match</title>
+    <style>
+        .tile {
+            font-size: xx-large;
+            width: 60px;
+            height: 60px;
+            background-color: gray;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        td {
+            width: 65px;
+            height: 65px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to Memory Match</h1>
+
+    <p><button onclick='resetBoard()'>Reset Game</button></p>
+
+    <div id='gameBoard'></div>
+
+    <script>
+        let map = [];
+        let tile1 = null, tile2 = null;
+
+      
+        const shuffle = (array) => {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        };
+
+       
+        const loadMap = (rows = 4, cols = 4) => {
+            let maxVal = (rows * cols) / 2;
+            let tempArray = [];
+            for (let i = 1; i <= maxVal; i++) {
+                tempArray.push(i, i); 
+            }
+            tempArray = shuffle(tempArray);
+
+            map = [];
+            for (let r = 0; r < rows; r++) {
+                map.push(tempArray.slice(r * cols, (r + 1) * cols)); 
+            }
+        };
+
+     
+        const makeBoard = (rows = 4, cols = 4) => {
+            let output = '<table>';
+            for (let row = 0; row < rows; row++) {
+                output += '<tr>';
+                for (let col = 0; col < cols; col++) {
+                    output += `<td><button class="tile" id="${row}_${col}" onclick="process(${row},${col})"></button></td>`;
+                }
+                output += '</tr>';
+            }
+            document.getElementById('gameBoard').innerHTML = output + '</table>';
+        };
+
+      
+        const resetBoard = () => {
+            loadMap();
+            makeBoard();
+        };
+
+        const process = (row, col) => {
+            let clicked_tile = document.getElementById(`${row}_${col}`);
+            if (!Boolean(clicked_tile.innerHTML)) {
+                if (!tile1) {
+                    tile1 = clicked_tile;
+                    clicked_tile.innerHTML = map[row][col];
+                } else if (!tile2) {
+                    tile2 = clicked_tile;
+                    clicked_tile.innerHTML = map[row][col];
+                    setTimeout(checkMatch, 1000);
+                }
+            }
+        };
+
+       
+        const checkMatch = () => {
+            if (tile1.innerHTML === tile2.innerHTML) {
+                tile1.hidden = true;
+                tile2.hidden = true;
+            } else {
+                tile1.innerHTML = '';
+                tile2.innerHTML = '';
+            }
+            tile1 = tile2 = null;
+        };
+
+        
+        resetBoard();
+    </script>
+</body>
+
+</html>
