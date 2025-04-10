@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Game Collection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: left;
+            padding-left: 10px;
+        }
+
+        #search-bar {
+            margin-left: 10px;
+            margin-bottom: 10px;
+        }
+
+        #media-container {
+            display: block;
+            margin: 0 10px;
+        }
+
+        .media-item {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        .media-item img {
+            width: 60px;
+            height: auto;
+            margin-right: 15px;
+        }
+
+        .media-info h3, .media-info p {
+            margin: 4px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Video Game Collection</h1>
+
+    <div id="search-bar">
+        <label for="search">Query:</label>
+        <input type="text" id="search" />
+        <button onclick="filterGames()">Search</button>
+    </div>
+
+    <hr>
+
+    <div id="media-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
